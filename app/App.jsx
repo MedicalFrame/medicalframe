@@ -18,7 +18,8 @@ import {
   UsersRound,
 } from 'lucide-react';
 
-const githubUrl = 'https://github.com/medicalframe/medicalframe';
+const githubUrl = 'https://github.com/MedicalFrame/medicalframe';
+const githubOrgUrl = 'https://github.com/MedicalFrame';
 const contactEmail = 'jisong@medicalframe.ai';
 
 const pages = [
@@ -141,7 +142,11 @@ const productFamilies = [
     accent: 'blue',
     links: [
       { name: 'MES Book', href: 'https://mes.medicalframe.ai' },
+      { name: 'MES GitHub', href: 'https://github.com/jsbang01357/mes.medicalframe.ai' },
       { name: 'CNC Book', href: 'https://cnc.medicalframe.ai' },
+      { name: 'CNC GitHub', href: 'https://github.com/jsbang01357/cnc.medicalframe.ai' },
+      { name: 'MHM Book', href: 'https://mhm.medicalframe.ai' },
+      { name: 'MHM GitHub', href: 'https://github.com/jsbang01357/mhm.medicalframe.ai' },
     ],
   },
   {
@@ -150,7 +155,7 @@ const productFamilies = [
     description: '학습 콘텐츠와 교육용 의료 지식 워크플로우를 운영합니다.',
     icon: UsersRound,
     accent: 'teal',
-    links: [{ name: 'study.medicalframe.ai', href: 'https://study.medicalframe.ai' }],
+    links: [{ name: 'MedicalFrame GitHub', href: githubOrgUrl }],
   },
   {
     title: 'LGBTQ+ Open Source',
@@ -158,7 +163,10 @@ const productFamilies = [
     description: '트랜스젠더 건강 정보를 공개 지식 자원으로 관리합니다.',
     icon: Code2,
     accent: 'violet',
-    links: [{ name: 'lgbtqplus.online', href: 'https://lgbtqplus.online' }],
+    links: [
+      { name: 'LGBTQ+ RAG', href: 'https://rag.lgbtqplus.online' },
+      { name: 'LGBTQ+ GitHub', href: 'https://github.com/MedicalFrame/lgbtqplus' },
+    ],
   },
   {
     title: 'Research',
@@ -166,7 +174,12 @@ const productFamilies = [
     description: '의료 AI 연구와 협업 결과물을 별도 연구 채널로 연결합니다.',
     icon: Database,
     accent: 'amber',
-    links: [{ name: 'research.medicalframe.ai', href: 'https://research.medicalframe.ai' }],
+    links: [
+      { name: 'DiaFrame GitHub', href: 'https://github.com/jsbang01357/DiaFrame' },
+      { name: 'NeuroFrame GitHub', href: 'https://github.com/jsbang01357/NeuroFrame' },
+      { name: 'VoiceGrape GitHub', href: 'https://github.com/jsbang01357/VoiceGrape' },
+      { name: 'PharmaFrame GitHub', href: 'https://github.com/jsbang01357/PharmaFrame' },
+    ],
   },
   {
     title: 'HyperClick',
@@ -175,7 +188,11 @@ const productFamilies = [
     icon: Activity,
     accent: 'navy',
     links: [
-      { name: 'HyperClick.medicalframe.ai', href: 'https://hyperclick.medicalframe.ai' },
+      { name: 'VoiceGrape GitHub', href: 'https://github.com/jsbang01357/VoiceGrape' },
+      {
+        name: 'Clean Text Redirect',
+        href: 'https://github.com/jsbang01357/Clean_Text_Redirect',
+      },
     ],
   },
 ];
@@ -567,6 +584,11 @@ function EthicsPage() {
             <span>Healthcare workflow focus</span>
             <span>Privacy-first operation</span>
             <span>Human-in-the-loop review</span>
+            <span>Jisong Foundation</span>
+          </div>
+          <div className="foundation-note">
+            <strong>Jisong Foundation</strong>
+            <span>jisongfoundation.org 연결 준비 중</span>
           </div>
         </div>
         <div className="principle-list">

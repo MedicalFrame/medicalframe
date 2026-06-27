@@ -813,6 +813,26 @@ h3 {
   font-weight: 800;
 }
 
+.foundation-note {
+  display: grid;
+  gap: 7px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #dfeaf4;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.foundation-note strong {
+  color: var(--navy);
+  font-size: 1.02rem;
+}
+
+.foundation-note span {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .principle-list {
   display: grid;
   gap: 12px;
