@@ -20,6 +20,10 @@
 - 사이드바 기반 페이지 구조로 변경
 - `제품`, `이사진`, `기업윤리`, `Help` 페이지 구성
 - 조직도 이미지를 `이사진` 페이지로 이동
+- `MedicalFrame/medicalframe` 공개 GitHub 저장소 생성 및 push
+- GitHub Pages 정적 배포 workflow 추가
+- GitHub Pages custom domain을 `medicalframe.ai`로 설정
+- 원본 PDF/PPT와 명함 원본 이미지는 공개 저장소에서 제외
 
 ## 검증
 
@@ -32,3 +36,6 @@
 - 모바일에서 페이지 전체 가로 넘침 없음 확인
 - 네 페이지 해시 전환 확인 완료: `#products`, `#directors`, `#ethics`, `#help`
 - 제품 페이지에서 조직도 미노출, 이사진 페이지에서 조직도 노출 확인 완료
+- GitHub Pages 배포 성공 확인: `https://medicalframe.github.io/medicalframe/`
+- `medicalframe.ai` Host 헤더 기준 index, JS, CSS, 조직도 이미지 200 응답 확인
+- 현재 DNS에는 `medicalframe.ai` A/CNAME 레코드가 없어 Cloudflare DNS 설정 필요
