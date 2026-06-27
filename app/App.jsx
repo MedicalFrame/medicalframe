@@ -128,7 +128,7 @@ function App() {
     <div className="app-shell">
       <aside className="sidebar" aria-label="MedicalFrame navigation">
         <a className="brand-mark" href="#products" aria-label="MedicalFrame home">
-          <img src="/assets/medicalframe-icon.png" alt="" />
+          <img src="assets/medicalframe-icon.png" alt="" />
           <span>MedicalFrame</span>
         </a>
 
@@ -230,7 +230,7 @@ function ProductsPage() {
         </div>
         <div className="hero-visual" aria-label="MedicalFrame product ecosystem">
           <img
-            src="/assets/product-ecosystem.png"
+            src="assets/product-ecosystem.png"
             alt="Voice EMR, database export, patient monitoring이 병원을 중심으로 연결된 MedicalFrame 제품 이미지"
           />
         </div>
@@ -274,7 +274,7 @@ function ProductsPage() {
       <section className="workflow-section">
         <div className="workflow-visual">
           <img
-            src="/assets/care-workflow.png"
+            src="assets/care-workflow.png"
             alt="AI, EMR, data, security, workflow가 환자와 의료진 주변에서 연결된 이미지"
           />
         </div>
@@ -326,7 +326,7 @@ function DirectorsPage() {
 
       <section className="organization-card">
         <img
-          src="/assets/organization-chart.jpeg"
+          src="assets/organization-chart.jpeg"
           alt="MedicalFrame Inc. 초기 조직 구성도"
         />
       </section>
@@ -381,7 +381,7 @@ function EthicsPage() {
         </div>
         <div className="impact-visual">
           <img
-            src="/assets/social-impact.png"
+            src="assets/social-impact.png"
             alt="Raphael Clinic과 LGBTQ+센터 사회공헌 활동 로고"
           />
         </div>
