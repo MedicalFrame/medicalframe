@@ -75,6 +75,54 @@ const products = [
   },
 ];
 
+const productFamilies = [
+  {
+    title: 'Books',
+    label: '책',
+    description: '의료와 기술 지식을 책과 장기 문서 형태로 정리합니다.',
+    icon: Package,
+    accent: 'blue',
+    links: [
+      { name: 'MES Book', href: 'https://mes.medicalframe.ai' },
+      { name: 'CNC Book', href: 'https://cnc.medicalframe.ai' },
+    ],
+  },
+  {
+    title: 'Study',
+    label: '교육',
+    description: '학습 콘텐츠와 교육용 의료 지식 워크플로우를 운영합니다.',
+    icon: UsersRound,
+    accent: 'teal',
+    links: [{ name: 'study.medicalframe.ai', href: 'https://study.medicalframe.ai' }],
+  },
+  {
+    title: 'LGBTQ+ Open Source',
+    label: '트랜스젠더 오픈소스',
+    description: '트랜스젠더 건강 정보를 공개 지식 자원으로 관리합니다.',
+    icon: Code2,
+    accent: 'violet',
+    links: [{ name: 'lgbtqplus.online', href: 'https://lgbtqplus.online' }],
+  },
+  {
+    title: 'Research',
+    label: '연구',
+    description: '의료 AI 연구와 협업 결과물을 별도 연구 채널로 연결합니다.',
+    icon: Database,
+    accent: 'amber',
+    links: [{ name: 'research.medicalframe.ai', href: 'https://research.medicalframe.ai' }],
+  },
+  {
+    title: 'HyperClick',
+    label: 'AI EMR',
+    description: 'AI 기반 EMR 제품군과 실제 임상 기록 흐름을 연결합니다.',
+    icon: Activity,
+    accent: 'navy',
+    links: [
+      { name: 'HyperClick.medicalframe.ai', href: 'https://hyperclick.medicalframe.ai' },
+    ],
+  },
+];
+
 const values = [
   {
     title: 'Save People’s Lives',
@@ -88,7 +136,7 @@ const values = [
   },
   {
     title: 'Give Back to Society',
-    text: '도움이 필요한 곳에 의료 접근성과 상담 지원을 연결합니다.',
+    text: '공개 지식과 책임 있는 제품 운영으로 사회적 가치를 남깁니다.',
     icon: HandHeart,
   },
 ];
@@ -247,7 +295,41 @@ function ProductsPage() {
 
       <section className="content-section">
         <div className="section-heading">
-          <p className="eyebrow">Solutions</p>
+          <p className="eyebrow">Product Lines</p>
+          <h2>MedicalFrame 제품군</h2>
+          <p>
+            책, 교육, 오픈소스, 연구, AI EMR을 각각의 목적에 맞는 채널로 나눠
+            운영합니다.
+          </p>
+        </div>
+        <div className="family-grid">
+          {productFamilies.map((family) => {
+            const Icon = family.icon;
+            return (
+              <article className={`family-card ${family.accent}`} key={family.title}>
+                <div className="icon-box">
+                  <Icon aria-hidden="true" size={23} />
+                </div>
+                <p>{family.label}</p>
+                <h3>{family.title}</h3>
+                <span>{family.description}</span>
+                <div className="family-links" aria-label={`${family.title} links`}>
+                  {family.links.map((link) => (
+                    <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>
+                      <span>{link.name}</span>
+                      <ArrowRight aria-hidden="true" size={17} />
+                    </a>
+                  ))}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="content-section">
+        <div className="section-heading">
+          <p className="eyebrow">Healthcare AI Core</p>
           <h2>진료 현장을 연결하는 세 가지 프레임</h2>
           <p>
             문서화, 데이터 정리, 모니터링을 분리된 도구가 아니라 하나의 의료 운영
@@ -369,21 +451,30 @@ function EthicsPage() {
       <section className="proof-section">
         <div className="proof-copy">
           <p className="eyebrow">Responsibility</p>
-          <h2>초기 고객 검증과 사회적 책임을 함께 쌓아갑니다</h2>
+          <h2>초기 고객 검증과 책임 있는 운영을 함께 쌓아갑니다</h2>
           <p>
-            MedicalFrame은 초기 고객 검증과 사회공헌 활동을 함께 쌓아가며 실제
-            의료 현장에서 오래 쓰일 수 있는 제품을 준비하고 있습니다.
+            MedicalFrame은 실제 의료 현장에서 오래 쓰일 수 있는 제품을 만들기
+            위해 안전성, 개인정보 보호, 설명 가능한 운영 원칙을 함께 정리합니다.
           </p>
           <div className="trust-list">
             <span>Healthcare workflow focus</span>
-            <span>Corporate social responsibility</span>
+            <span>Privacy-first operation</span>
+            <span>Human-in-the-loop review</span>
           </div>
         </div>
-        <div className="impact-visual">
-          <img
-            src="assets/social-impact.png"
-            alt="Raphael Clinic과 LGBTQ+센터 사회공헌 활동 로고"
-          />
+        <div className="principle-list">
+          <article>
+            <strong>Safety</strong>
+            <span>의료진의 최종 판단을 보조하는 방향으로 제품을 설계합니다.</span>
+          </article>
+          <article>
+            <strong>Privacy</strong>
+            <span>민감한 의료 데이터는 최소 수집과 목적 제한을 기준으로 다룹니다.</span>
+          </article>
+          <article>
+            <strong>Accountability</strong>
+            <span>실제 사용 현장에서 책임 소재와 검토 흐름이 보이도록 만듭니다.</span>
+          </article>
         </div>
       </section>
     </div>
