@@ -23,16 +23,10 @@ const contactEmail = 'jisong@medicalframe.ai';
 
 const pages = [
   {
-    id: 'products',
-    label: '제품',
-    description: 'AI 의료 워크플로우',
-    icon: Package,
-  },
-  {
-    id: 'directors',
-    label: '이사진',
-    description: '초기 조직 구성',
-    icon: UsersRound,
+    id: 'medicalframe',
+    label: 'MedicalFrame',
+    description: '회사 개요',
+    icon: Building2,
   },
   {
     id: 'ethics',
@@ -41,10 +35,73 @@ const pages = [
     icon: Scale,
   },
   {
+    id: 'directors',
+    label: '이사진',
+    description: '초기 조직 구성',
+    icon: UsersRound,
+  },
+  {
+    id: 'products',
+    label: '제품',
+    description: '제품군과 링크',
+    icon: Package,
+  },
+  {
     id: 'help',
     label: 'Help',
     description: '문의와 저장소',
     icon: HelpCircle,
+  },
+];
+
+const orgUnits = [
+  {
+    unit: 'AI혁신본부',
+    director: 'OOO',
+    title: 'AI혁신본부 이사',
+    scope: 'Medical RAG, DiaFrame, NeuroFrame, VoiceGrape',
+    slots: ['AI Research Engineer', 'RAG Engineer', 'MLOps Engineer'],
+    accent: 'blue',
+  },
+  {
+    unit: '미래전략실',
+    director: 'OOO',
+    title: '미래전략실 이사',
+    scope: '딥테크 전략, 온프레미스 AI 인프라, 산학협력',
+    slots: ['Strategy Analyst', 'Research Partnership Manager', 'Infrastructure Strategy'],
+    accent: 'teal',
+  },
+  {
+    unit: 'R&D본부',
+    director: 'OOO',
+    title: 'R&D본부 이사',
+    scope: '제품화 연구개발, 프로토타입, 워크플로우 검증',
+    slots: ['Product R&D Engineer', 'Workflow Automation', 'Compliance Engineer'],
+    accent: 'violet',
+  },
+  {
+    unit: '개발본부',
+    director: 'OOO',
+    title: '개발본부 이사',
+    scope: '서비스 개발, 제품 통합, 배포 구조',
+    slots: ['Backend Engineer', 'Frontend Engineer', 'DevOps Engineer'],
+    accent: 'amber',
+  },
+  {
+    unit: '플랫폼구현본부',
+    director: 'OOO',
+    title: '플랫폼구현본부 이사',
+    scope: '내부 도구, 지식공개 제품군, 자동화 구현',
+    slots: ['Full-stack Engineer', 'Automation Engineer', 'Technical Writer'],
+    accent: 'blue',
+  },
+  {
+    unit: '경영전략실',
+    director: 'OOO',
+    title: '경영전략실 이사',
+    scope: '사업 운영, 매출 모델, 투자/인사/파트너십',
+    slots: ['Business Operations', 'Partnership Manager', 'Finance/HR Associate'],
+    accent: 'teal',
   },
 ];
 
@@ -150,7 +207,10 @@ const proofItems = [
 
 function normalizePage(hash) {
   const nextPage = hash.replace('#', '');
-  return pages.some((page) => page.id === nextPage) ? nextPage : 'products';
+  if (!nextPage || nextPage === 'home') {
+    return 'medicalframe';
+  }
+  return pages.some((page) => page.id === nextPage) ? nextPage : 'medicalframe';
 }
 
 function App() {
@@ -162,7 +222,7 @@ function App() {
     const handleHashChange = () => setActivePage(normalizePage(window.location.hash));
     window.addEventListener('hashchange', handleHashChange);
     if (!window.location.hash) {
-      window.history.replaceState(null, '', '#products');
+      window.history.replaceState(null, '', '#medicalframe');
     }
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
@@ -175,7 +235,7 @@ function App() {
   return (
     <div className="app-shell">
       <aside className="sidebar" aria-label="MedicalFrame navigation">
-        <a className="brand-mark" href="#products" aria-label="MedicalFrame home">
+        <a className="brand-mark" href="#medicalframe" aria-label="MedicalFrame home">
           <img src="assets/medicalframe-icon.png" alt="" />
           <span>MedicalFrame</span>
         </a>
@@ -231,16 +291,17 @@ function App() {
           </div>
         </header>
 
-        {activePage === 'products' && <ProductsPage />}
-        {activePage === 'directors' && <DirectorsPage />}
+        {activePage === 'medicalframe' && <HomePage />}
         {activePage === 'ethics' && <EthicsPage />}
+        {activePage === 'directors' && <DirectorsPage />}
+        {activePage === 'products' && <ProductsPage />}
         {activePage === 'help' && <HelpPage />}
       </main>
     </div>
   );
 }
 
-function ProductsPage() {
+function HomePage() {
   return (
     <div className="page-content">
       <section className="hero-section">
@@ -256,8 +317,8 @@ function ProductsPage() {
               <Mail aria-hidden="true" size={19} />
               <span>문의하기</span>
             </a>
-            <a className="secondary-button" href="#help">
-              <span>도입 문의</span>
+            <a className="secondary-button" href="#products">
+              <span>제품군 보기</span>
               <ArrowRight aria-hidden="true" size={19} />
             </a>
           </div>
@@ -293,6 +354,43 @@ function ProductsPage() {
         ))}
       </section>
 
+      <section className="workflow-section">
+        <div className="workflow-visual">
+          <img
+            src="assets/care-workflow.png"
+            alt="AI, EMR, data, security, workflow가 환자와 의료진 주변에서 연결된 이미지"
+          />
+        </div>
+        <div className="workflow-copy">
+          <p className="eyebrow">Workflow</p>
+          <h2>사람을 중심에 둔 의료 AI</h2>
+          <p>
+            MedicalFrame의 방향은 단순한 자동화가 아니라 의료진, 환자, 운영
+            조직이 같은 정보를 보고 움직일 수 있는 연결 구조입니다.
+          </p>
+          <div className="workflow-steps">
+            <div>
+              <strong>01. 기록을 듣고</strong>
+              <span>진료 흐름을 놓치지 않게 음성 기반 기록을 정리합니다.</span>
+            </div>
+            <div>
+              <strong>02. 데이터를 정돈하고</strong>
+              <span>필요한 데이터만 빠르게 꺼낼 수 있는 구조를 만듭니다.</span>
+            </div>
+            <div>
+              <strong>03. 환자 상태를 연결합니다</strong>
+              <span>병동과 모니터링 정보를 한 화면에서 파악하도록 돕습니다.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function ProductsPage() {
+  return (
+    <div className="page-content">
       <section className="content-section">
         <div className="section-heading">
           <p className="eyebrow">Product Lines</p>
@@ -352,37 +450,6 @@ function ProductsPage() {
           })}
         </div>
       </section>
-
-      <section className="workflow-section">
-        <div className="workflow-visual">
-          <img
-            src="assets/care-workflow.png"
-            alt="AI, EMR, data, security, workflow가 환자와 의료진 주변에서 연결된 이미지"
-          />
-        </div>
-        <div className="workflow-copy">
-          <p className="eyebrow">Workflow</p>
-          <h2>사람을 중심에 둔 의료 AI</h2>
-          <p>
-            MedicalFrame의 방향은 단순한 자동화가 아니라 의료진, 환자, 운영
-            조직이 같은 정보를 보고 움직일 수 있는 연결 구조입니다.
-          </p>
-          <div className="workflow-steps">
-            <div>
-              <strong>01. 기록을 듣고</strong>
-              <span>진료 흐름을 놓치지 않게 음성 기반 기록을 정리합니다.</span>
-            </div>
-            <div>
-              <strong>02. 데이터를 정돈하고</strong>
-              <span>필요한 데이터만 빠르게 꺼낼 수 있는 구조를 만듭니다.</span>
-            </div>
-            <div>
-              <strong>03. 환자 상태를 연결합니다</strong>
-              <span>병동과 모니터링 정보를 한 화면에서 파악하도록 돕습니다.</span>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
@@ -407,10 +474,50 @@ function DirectorsPage() {
       </section>
 
       <section className="organization-card">
-        <img
-          src="assets/organization-chart.jpeg"
-          alt="MedicalFrame Inc. 초기 조직 구성도"
-        />
+        <div className="org-graph" aria-label="MedicalFrame Inc. 조직 그래프">
+          <div className="org-tier org-tier-top">
+            <article className="org-node org-node-primary">
+              <span>Founder & CEO</span>
+              <strong>MedicalFrame</strong>
+              <small>비전, 의료 도메인 전략, 투자/파트너십 최종 책임</small>
+            </article>
+          </div>
+
+          <div className="org-tier org-tier-advisors">
+            <article className="org-node">
+              <span>Research Advisory</span>
+              <strong>자문교수</strong>
+              <small>생명과학/바이오 자문</small>
+            </article>
+            <article className="org-node">
+              <span>Research Team</span>
+              <strong>연구팀 이사</strong>
+              <small>연구 기획과 의학 연구 검토</small>
+            </article>
+          </div>
+
+          <div className="org-branch-label" aria-hidden="true">
+            <span>Director Units</span>
+          </div>
+
+          <div className="org-unit-grid">
+            {orgUnits.map((unit) => (
+              <article className={`org-unit-card ${unit.accent}`} key={unit.unit}>
+                <div>
+                  <p>{unit.unit}</p>
+                  <h3>{unit.director}</h3>
+                  <strong>{unit.title}</strong>
+                  <span>{unit.scope}</span>
+                </div>
+                <ul>
+                  {unit.slots.map((slot) => (
+                    <li key={slot}>{slot}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
