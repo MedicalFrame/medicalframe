@@ -10,6 +10,7 @@ import {
   HeartPulse,
   HelpCircle,
   Mail,
+  MapPin,
   Mic,
   Package,
   Scale,
@@ -21,6 +22,7 @@ import {
 const githubUrl = 'https://github.com/MedicalFrame/medicalframe';
 const githubOrgUrl = 'https://github.com/MedicalFrame';
 const contactEmail = 'jisong@medicalframe.ai';
+const officeAddress = '서울시 강남구 선릉로69길19 역삼래미안아파트';
 
 const pages = [
   {
@@ -352,6 +354,10 @@ function HomePage() {
               <Stethoscope aria-hidden="true" size={17} />
               Clinical Workflow
             </span>
+            <span>
+              <MapPin aria-hidden="true" size={17} />
+              Offline Office
+            </span>
           </div>
         </div>
         <div className="hero-visual" aria-label="MedicalFrame product ecosystem">
@@ -629,9 +635,17 @@ function HelpPage() {
             <span>GitHub Repository</span>
           </a>
         </div>
+        <div className="office-address">
+          <MapPin aria-hidden="true" size={19} />
+          <span>{officeAddress}</span>
+        </div>
       </section>
 
       <section className="help-grid">
+        <article className="help-card">
+          <strong>오프라인 주소</strong>
+          <span>{officeAddress}</span>
+        </article>
         <article className="help-card">
           <strong>제품 문의</strong>
           <span>SuperSOAP, CleanEMR, WardFrame 적용 범위를 논의합니다.</span>

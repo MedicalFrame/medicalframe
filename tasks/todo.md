@@ -35,6 +35,7 @@
 - 사이드바 순서를 `MedicalFrame`, `기업윤리`, `이사진`, `제품`, `Help`로 변경
 - 이사진 페이지의 조직도 이미지를 제거하고 UI 기반 조직 그래프로 대체
 - 조직도 공개 자산 이미지를 배포 대상에서 제외
+- Help 페이지와 첫 페이지 요약에 오프라인 주소 추가: `서울시 강남구 선릉로69길19 역삼래미안아파트`
 - `MedicalFrame/medicalframe` 공개 GitHub 저장소 생성 및 push
 - GitHub Pages 정적 배포 workflow 추가
 - GitHub Pages custom domain을 `medicalframe.ai`로 설정
@@ -59,6 +60,7 @@
 - 기업윤리 페이지에서 라파엘/센터 로고 미노출 확인 완료
 - 첫 페이지, 기업윤리, 이사진, 제품, Help 순서 확인 완료
 - 이사진 페이지 UI 조직 그래프 확인 완료
+- 오프라인 주소 노출 확인 완료
 - GitHub Pages 배포 성공 확인: `https://medicalframe.github.io/medicalframe/`
 - `medicalframe.ai` Host 헤더 기준 index, JS, CSS, 주요 정적 자산 200 응답 확인
 - `medicalframe.ai`, `mes.medicalframe.ai`, `cnc.medicalframe.ai`, `rag.lgbtqplus.online` DNS 응답 확인

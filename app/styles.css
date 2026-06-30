@@ -861,6 +861,22 @@ h3 {
   max-width: 780px;
 }
 
+.office-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  color: #314057;
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.office-address svg {
+  flex: 0 0 auto;
+  color: var(--teal);
+}
+
 .help-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
