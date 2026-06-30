@@ -28,7 +28,7 @@
 - LGBTQ+ Open Source 제품군을 `rag.lgbtqplus.online`과 `MedicalFrame/lgbtqplus` 저장소로 연결
 - Research 제품군을 `DiaFrame`, `NeuroFrame`, `VoiceGrape`, `PharmaFrame` 공개 저장소로 연결
 - HyperClick 제품군을 공개 가능한 `VoiceGrape`, `Clean_Text_Redirect` 저장소로 연결
-- `jisongfoundation.org` 도메인 미연결 상태를 확인하고 기업윤리 페이지에 Jisong Foundation 준비중 항목 추가
+- `jisongfoundation.org` 접속 가능 상태를 확인하고 기업윤리 페이지에 Jisong Foundation 링크 연결
 - 모바일에서도 로고 옆 `MedicalFrame` 텍스트가 보이도록 수정
 - 라파엘/센터 로고 이미지는 홈페이지와 공개 배포 자산에서 제외
 - 첫 페이지를 `MedicalFrame` 회사 개요 페이지로 변경
@@ -64,4 +64,4 @@
 - GitHub Pages 배포 성공 확인: `https://medicalframe.github.io/medicalframe/`
 - `medicalframe.ai` Host 헤더 기준 index, JS, CSS, 주요 정적 자산 200 응답 확인
 - `medicalframe.ai`, `mes.medicalframe.ai`, `cnc.medicalframe.ai`, `rag.lgbtqplus.online` DNS 응답 확인
-- `jisongfoundation.org`, `www.jisongfoundation.org` DNS 미응답 확인
+- `jisongfoundation.org` DNS 응답 및 HTTP 200 확인

@@ -21,6 +21,7 @@ import {
 
 const githubUrl = 'https://github.com/MedicalFrame/medicalframe';
 const githubOrgUrl = 'https://github.com/MedicalFrame';
+const foundationUrl = 'https://jisongfoundation.org';
 const contactEmail = 'jisong@medicalframe.ai';
 const officeAddress = '서울시 강남구 선릉로69길19 역삼래미안아파트';
 
@@ -592,10 +593,11 @@ function EthicsPage() {
             <span>Human-in-the-loop review</span>
             <span>Jisong Foundation</span>
           </div>
-          <div className="foundation-note">
+          <a className="foundation-note" href={foundationUrl} target="_blank" rel="noreferrer">
             <strong>Jisong Foundation</strong>
-            <span>jisongfoundation.org 연결 준비 중</span>
-          </div>
+            <span>jisongfoundation.org</span>
+            <ArrowRight aria-hidden="true" size={18} />
+          </a>
         </div>
         <div className="principle-list">
           <article>
